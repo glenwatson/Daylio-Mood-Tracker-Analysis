@@ -236,15 +236,16 @@ def activity_table(df, start_date, end_date):
     overall_avg_mood = df_filtered['moodscore'].mean()
 
     for _, row in df_filtered.iterrows():
-        activities = row['activities'].split(' | ')
-        mood = row['moodscore']
+        if isinstance(row['activities'], str):
+            activities = row['activities'].split(' | ')
+            mood = row['moodscore']
 
-        for activity in activities:
-            if activity not in activity_dict:
-                activity_dict[activity] = {'count': 0, 'total_mood': 0}
+            for activity in activities:
+                if activity not in activity_dict:
+                    activity_dict[activity] = {'count': 0, 'total_mood': 0}
             
-            activity_dict[activity]['count'] += 1
-            activity_dict[activity]['total_mood'] += mood
+                activity_dict[activity]['count'] += 1
+                activity_dict[activity]['total_mood'] += mood
     
     activity_table_data = []
     for activity, data in activity_dict.items():
@@ -431,7 +432,7 @@ def keyword_percentage(df, start_date, end_date, keyword):
 
     for _, row in df_filtered.iterrows():
         note = row['note']
-        if keyword.lower() in note.lower():
+        if isinstance(note, str) and keyword.lower() in note.lower():
             keyword_days += 1
 
     percentage = (keyword_days / total_days) * 100
