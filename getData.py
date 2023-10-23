@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Define the mood score mappings
-mood_score_map = {'rad': 5, 'almost Rad': 4.5, 'good': 4, 'Solid': 3, 'okay': 2, 'meh': 1, 'bad': 0}
+mood_score_map = {'rad': 4, 'good': 3, 'meh': 2, 'bad': 1, 'awful': 0}
 
 # Read the CSV file into a pandas dataframe
 df = pd.read_csv('daylio_export_2023_03_12.csv')

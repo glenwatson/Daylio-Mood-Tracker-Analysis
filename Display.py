@@ -9,7 +9,7 @@ st.set_page_config(layout="wide")
 st.title("Mood Tracker Analysis")
 
 # Date input
-start_date = st.date_input("Start Date", value =pd.to_datetime("2020-01-01"))
+start_date = st.date_input("Start Date", value =pd.to_datetime("2020-04-01"))
 end_date = st.date_input("End Date", value=pd.to_datetime("today"))
 
 avgMood = getAvgMood(start_date,end_date)

@@ -38,9 +38,9 @@ The web application is built using the streamlit library, which makes it easy to
 ## How to use
 To use the project, follow these steps:
 
-1. Install the required libraries by running pip install -r requirements.txt in your command line.
+1. Install the required libraries by running `pip install -r requirements.txt` in your command line.
 2. Download the mood tracker dataset in CSV format and save it in the same directory as the three Python files.
-3. Run app.py using the command streamlit run app.py in your command line.
+3. Run app.py using the command `streamlit run Display.py` in your command line.
 4. Use the interactive widgets to explore the data and insights.
 
 ## Other Tools Used
